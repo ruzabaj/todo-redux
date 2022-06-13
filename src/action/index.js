@@ -1,8 +1,10 @@
-import React from 'react'
+import { type } from '@testing-library/user-event/dist/type'
+import React from 'react';
+
 
 export const addTodo = () => {
   return (
-    type: 'ADD_TODO'
+    type :'ADD_TODO'
   )
 }
 export const deleteTodo = () => {
