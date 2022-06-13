@@ -13,7 +13,7 @@ const Todo = () => {
       <div className="heading">My Todo-s</div>
       <div className="input-todo">
         <input type="text" onChange={e=>setInputvalue(e.target.value)} value={inputValue}/>
-        <button type="submit" className="btn-add" onClick={()=>dispatch()}>Add</button>
+        <button type="submit" className="btn-add" onClick={()=>dispatch(addTodo(inputValue ))}>Add</button>
       </div>
     </div>
     </div>
