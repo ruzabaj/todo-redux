@@ -7,7 +7,7 @@ const Todoreducer = (state=initialData, action) => {
         const{id,data} =action.payload;
         return{
             ...state, 
-            data:[
+            dataList:[
                 ...state.dataList,
                 {
                     id:id,  
