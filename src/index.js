@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Todo from './components/Todo';
+import {Provider} from 'react-redux';
+import store from './store'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <Todo/>
+    <Provider store={store}>
+      <App />
+      <Todo/>
+    </Provider>
   </React.StrictMode>
 );
 
