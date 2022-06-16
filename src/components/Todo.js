@@ -7,11 +7,15 @@ const Todo = () => {
   const [inputValue, setInputvalue] = useState("");
   const list = useSelector((state) => state.Todoreducer.dataList);
   const dispatch = useDispatch;
-console.log({list})
+  console.log("value", inputValue);
+  console.log({ list });
+
   return (
     <div className="todo-outer">
       <div className="todo">
-      <h3 className="heading"><a href='todo'>My Todo-s</a></h3>
+        <h3 className="heading">
+          <a href="todo">My Todo-s</a>
+        </h3>
         <div className="input-todo">
           <input
             type="text"
@@ -26,38 +30,40 @@ console.log({list})
             Add
           </button>
         </div>
-        <div className='select-categories'>
-                <div className='select-filter'>
-                Filter:
-                    <select>
-                        <option>All</option>
-                    </select>
-                </div>
-                <div className='select-sort'>
-                Sort:
-                    <select>
-                        <option>Added Date</option>
-                    </select>
-                </div>
-           </div>
+        <div className="select-categories">
+          <div className="select-filter">
+            Filter:
+            <select>
+              <option>All</option>
+            </select>
+          </div>
+          <div className="select-sort">
+            Sort:
+            <select>
+              <option>Added Date</option>
+            </select>
+          </div>
+        </div>
+
         <div className="show-todo">
           {list?.map((i) => {
-            return(
-
-                <div className="items" key={i.id}>
-              <h3>{i.data}</h3>
-              <button
-                type="submit"
-                className="btn-add"
-                onClick={() =>
-                    dispatch(deleteTodo(i.id))
-                }
+            return (
+              <div className="items" key={i.id}>
+                <h3>{i.data}</h3>
+                <button
+                  type="submit"
+                  className="btn-add"
+                  onClick={() => dispatch(deleteTodo(i.id))}
                 >
-                Delete
-              </button>
-            </div>
-              )
+                  Delete
+                </button>
+              </div>
+            )
           })}
+        </div>
+
+          <div className="remove-todo">
+            <button type="submit" onClick={()=>dispatch(removeTodo)}>REMOVE</button>
           </div>
       </div>
     </div>
