@@ -5,10 +5,11 @@ import { addTodo, deleteTodo, removeTodo } from "../action";
 import { useSelector, useDispatch } from "react-redux";
 const Todo = () => {
   const [inputValue, setInputvalue] = useState("");
-  const list = useSelector((state) => state.Todoreducer.dataList);
+  const list = useSelector((state) => state.Todoreducer.todoList);
   const dispatch = useDispatch;
+
   console.log("value", inputValue);
-  console.log({ list });
+  console.log([list]);
 
   return (
     <div className="todo-outer">
@@ -30,6 +31,7 @@ const Todo = () => {
             Add
           </button>
         </div>
+
         <div className="select-categories">
           <div className="select-filter">
             Filter:
@@ -57,6 +59,8 @@ const Todo = () => {
                 >
                   Delete
                 </button>
+                <input type="checkbox"/>
+                <span class="checkmark"></span>
               </div>
             )
           })}
@@ -65,6 +69,7 @@ const Todo = () => {
           <div className="remove-todo">
             <button type="submit" onClick={()=>dispatch(removeTodo)}>REMOVE</button>
           </div>
+
       </div>
     </div>
   );
