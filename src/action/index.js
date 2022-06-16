@@ -1,22 +1,13 @@
-import { type } from "@testing-library/user-event/dist/type"
+export const addTodo = data => ({
 
-export const addTodo = (data) => {
-  return (
-    type: 'ADD_TODO'
-    // payload:{
-    //     id: new Date().getTime().toString(),
-    //     data:data
-    // }
-  )
-}
-export const deleteTodo = () => {
-    return (
-     type: 'DELETE_TODO'
-    )
+  type: 'ADD_TODO',
+  payload: {
+    id: new Date().getTime().toString(),
+    data: data
   }
-  
-//   export const removeTodo = () => {
-//     return (
-//       'REMOVE_TODO'
-//     )
-//   }
+
+})
+
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+})

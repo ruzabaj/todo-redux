@@ -10,8 +10,8 @@ const Todoreducer = (state=initialData, action) => {
             dataList:[
                 ...state.dataList,
                 {
-                    id:id,  
-                    data:data
+                    id,  
+                    data
                 }
             ]
         }

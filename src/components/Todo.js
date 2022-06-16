@@ -5,9 +5,9 @@ import { addTodo, deleteTodo, removeTodo } from "../action";
 import { useSelector, useDispatch } from "react-redux";
 const Todo = () => {
   const [inputValue, setInputvalue] = useState("");
-  const List = useSelector((state) => state.todoReducer.dataList);
+  const list = useSelector((state) => state.Todoreducer.dataList);
   const dispatch = useDispatch;
-
+console.log({list})
   return (
     <div className="todo-outer">
       <div className="todo">
@@ -24,25 +24,28 @@ const Todo = () => {
             className="btn-add"
             onClick={() => dispatch(addTodo(inputValue), setInputvalue(""))}
           >
-            Delete
+            Add
           </button>
         </div>
         <div className="show-todo">
-          {List.map((i) => {
-            <div className="items" key={i.id}>
+          {list?.map((i) => {
+            return(
+
+                <div className="items" key={i.id}>
               <h3>{i.data}</h3>
               <button
                 type="submit"
                 className="btn-add"
                 onClick={() =>
-                  dispatch(deleteTodo(i.id))
+                    dispatch(deleteTodo(i.id))
                 }
-              >
+                >
                 Add
               </button>
-            </div>;
+            </div>
+              )
           })}
-        </div>
+          </div>
       </div>
     </div>
   );
