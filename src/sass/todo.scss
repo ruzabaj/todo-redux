@@ -17,6 +17,9 @@ input[type=text]{
     width: 400px;
     height: 20px;
     padding: 10px;
+    border: 0;
+    border-radius: 05px;
+    box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 2.6px;
 }
 .btn-add{
     width: 80px;
@@ -24,6 +27,8 @@ input[type=text]{
     margin-left: -100px;
     background-color: $primary-color;
     color: $secondary-color;
+    border: 0;
+    border-radius: 05px;
 }
 .select-categories{
     display: flex;
