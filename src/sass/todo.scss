@@ -1,5 +1,12 @@
 @import './config';
 
+body{
+    background-color: $background-color;
+}
+h3 a{
+    text-decoration: none;
+    color: $primary-color;
+}
 .todo{
     display: flex;
     flex-direction: column;
@@ -17,4 +24,12 @@ input[type=text]{
     margin-left: -100px;
     background-color: $primary-color;
     color: $secondary-color;
+}
+.select-categories{
+    display: flex;
+    margin-top: 10px;
+}
+select{
+   padding: 05px;
+   margin-left: 10px;
 }

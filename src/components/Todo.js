@@ -11,8 +11,7 @@ console.log({list})
   return (
     <div className="todo-outer">
       <div className="todo">
-        <div className="heading">My Todo-s</div>
-
+      <h3 className="heading"><a href='todo'>My Todo-s</a></h3>
         <div className="input-todo">
           <input
             type="text"
@@ -27,6 +26,20 @@ console.log({list})
             Add
           </button>
         </div>
+        <div className='select-categories'>
+                <div className='select-filter'>
+                Filter:
+                    <select>
+                        <option>All</option>
+                    </select>
+                </div>
+                <div className='select-sort'>
+                Sort:
+                    <select>
+                        <option>Added Date</option>
+                    </select>
+                </div>
+           </div>
         <div className="show-todo">
           {list?.map((i) => {
             return(
@@ -40,7 +53,7 @@ console.log({list})
                     dispatch(deleteTodo(i.id))
                 }
                 >
-                Add
+                Delete
               </button>
             </div>
               )
