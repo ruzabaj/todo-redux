@@ -1,33 +1,32 @@
 const initialData = {
-  todoList: [],
+  todos: [],
 };
-const Todoreducer = (state = initialData, action) => {
+
+const reducer = (state = initialData, action) => {
   switch (action.type) {
-    case "ADD_TODO":
-      const { id, data } = action.payload;
+      case "ADD_TODO":
+      // const { id, data } = action.payload;
       return {
-        ...state,
-        todoList: [
-          ...state.todoList,
-          {
-            id,
-            data,
-          },
-        ],
-      };
+          ...state,
+          todos: [
+              ...state.todos,
+              action.payload
+          ]
+        };
     case "DELETE_TODO":
-      const newList = state.todoList.filter((i) => i.id !== action.id);
+      // const newList = state.todoList.filter((i) => i.id !== action.id);
       return {
         ...state,
-        todoList: newList,
+        // todoList: newList,
+        todeos: [...state.todos.filter(todo=>todo.id !== action.payload)]
       };
     case "REMOVE_TODO":
       return {
         ...state,
-        todoList: [],
+        todos: [],
       };
     default:
       return state;
   }
 };
-export default Todoreducer;
+export default reducer;

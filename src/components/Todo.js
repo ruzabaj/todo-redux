@@ -3,8 +3,10 @@ import { useState } from "react";
 import "../sass/todo.scss";
 import { addTodo, deleteTodo, removeTodo } from "../action";
 import { useSelector, useDispatch } from "react-redux";
+
 const Todo = () => {
-  const [inputValue, setInputvalue] = useState("");
+  const [inputValue, setInputvalue] = useState();
+
   const list = useSelector((state) => state.Todoreducer.todoList);
   const dispatch = useDispatch;
 
