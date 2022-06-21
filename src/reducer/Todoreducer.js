@@ -14,11 +14,11 @@ const reducer = (state = initialData, action) => {
           ]
         };
     case "DELETE_TODO":
-      // const newList = state.todoList.filter((i) => i.id !== action.id);
+      // const newList = state.todoList.filter((todo) => todo.id !== action.id);
       return {
         ...state,
         // todoList: newList,
-        todeos: [...state.todos.filter(todo=>todo.id !== action.payload)]
+        todos: [...state.todos.filter(todo=>todo.id !== action.payload)]
       };
     case "REMOVE_TODO":
       return {
